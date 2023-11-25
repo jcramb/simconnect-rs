@@ -1,0 +1,18 @@
+[package]
+name = "simconnect-sys"
+version = "0.1.0"
+authors = [
+    "John Cramb <john@simconnect.dev>"
+]
+description = "FFI bindings to MSFS SimConnect"
+documentation = "https://docs.rs/simconnect-sys"
+repository = "https://github.com/jcramb/simconnect-sys/"
+keywords = ["simconnect", "msfs", "sdk"]
+categories = ["external-ffi-bindings"]
+license = "MIT OR Apache-2.0"
+links = "SimConnect"
+build = "build/main.rs"
+edition = "2021"
+
+[build-dependencies]
+bindgen = "0.69.1"
