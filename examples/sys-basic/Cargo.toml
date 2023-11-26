@@ -1,0 +1,14 @@
+[package]
+name = "sys-basic"
+authors = [
+    "John Cramb <john@simconnect.dev>"
+]
+description = "Basic example showing how to use the FFI bindings for SimConnect."
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+parking_lot = "0.12.1"
+simconnect-sys = { path = "../../simconnect-sys", features = [ "vendored", "static" ] }
+tokio = { version = "1.34.0", features = ["full"] }

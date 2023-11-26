@@ -3,7 +3,7 @@
 #define FALSE 0
 #define CONST const
 #define MAX_PATH 260
-#define CALLBACK  __stdcall
+#define CALLBACK __stdcall
 
 typedef int BOOL;
 typedef char CHAR;
@@ -25,4 +25,4 @@ typedef struct _GUID {
   unsigned char  Data4[8];
 } GUID;
 
-#include "sdk\\include\\SimConnect.h"
+// NOTE: SimConnect.h included by bindgen builder
