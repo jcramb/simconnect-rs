@@ -1,5 +1,5 @@
 # `simconnect-sys`
-[![docs](https://img.shields.io/docsrs/simconnect-sys?style=for-the-badge&logo=rust)](https://img.shields.io/docsrs/simconnect-sys)
+[![docs](https://img.shields.io/docsrs/simconnect-sys?style=for-the-badge&logo=rust)](https://docs.rs/crate/simconnect-sys/latest)
 [![license](https://img.shields.io/crates/l/simconnect-sys?style=for-the-badge)](https://crates.io/crates/simconnect-sys)
 [![version](https://img.shields.io/crates/v/simconnect-sys?style=for-the-badge)](https://crates.io/crates/simconnect-sys)
 [![downloads](https://img.shields.io/crates/d/simconnect-sys?style=for-the-badge)](https://crates.io/crates/simconnect-sys)
