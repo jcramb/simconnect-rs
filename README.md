@@ -8,18 +8,19 @@ FFI bindings for SimConnect.
 
 ## Status
 
-![Maintenance](https://img.shields.io/maintenance/active%20development/2023?style=for-the-badge)
+<picture>
+  <img alt="maintenance" src="https://img.shields.io/maintenance/active%20development/2023?style=for-the-badge">
+</picture>
 
-Currently supported version of `simconnect-sys` is `0.2.0`, using SimConnect SDK `0.22.3` 
+Currently supported version of `simconnect-sys` is using SimConnect SDK `0.22.3`.
 
-Crate will be updated for each new SimConnect SDK release. Bindings will be unstable during development and breaking changes, as indicated by minor version bumps, are likely to occur. Upon reaching a stable format the version of this crate will be updated to track the SimConnect SDK version it targets.
-
+Crate will be updated for each new SimConnect SDK release with the version indicating the SDK version it targets.
 
 ## Usage
 
 ```toml
 [dependencies]
-simconnect-sys = { version = "0.2.0", features = [ "static", "vendored" ] }
+simconnect-sys = { version = "0.22.3", features = [ "static", "vendored" ] }
 ```
 
 ### Getting Started

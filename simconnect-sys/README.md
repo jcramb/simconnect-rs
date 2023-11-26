@@ -1,5 +1,5 @@
 # `simconnect-sys`
-[![docs](https://img.shields.io/docsrs/simconnect-sys?style=for-the-badge&logo=rust)](https://img.shields.io/docsrs/simconnect-sys)
+[![docs](https://img.shields.io/docsrs/simconnect-sys?style=for-the-badge&logo=rust)](https://docs.rs/crate/simconnect-sys/latest)
 [![license](https://img.shields.io/crates/l/simconnect-sys?style=for-the-badge)](https://crates.io/crates/simconnect-sys)
 [![version](https://img.shields.io/crates/v/simconnect-sys?style=for-the-badge)](https://crates.io/crates/simconnect-sys)
 [![downloads](https://img.shields.io/crates/d/simconnect-sys?style=for-the-badge)](https://crates.io/crates/simconnect-sys)
@@ -8,7 +8,9 @@ FFI bindings for SimConnect.
 
 ## Status
 
-![Maintenance](https://img.shields.io/maintenance/active%20development/2023?style=for-the-badge)
+<picture>
+  <img alt="maintenance" src="https://img.shields.io/maintenance/active%20development/2023?style=for-the-badge">
+</picture>
 
 Currently supported version of `simconnect-sys` is using SimConnect SDK `0.22.3`.
 
@@ -20,6 +22,28 @@ Crate will be updated for each new SimConnect SDK release with the version indic
 [dependencies]
 simconnect-sys = { version = "0.22.3", features = [ "static", "vendored" ] }
 ```
+
+### Getting Started
+
+```rust
+use simconnect_sys::*;
+
+// open handle to SimConnect
+let mut handle = std::ptr::null_mut();
+let hr = unsafe { SimConnect_Open(
+	&mut handle,
+    CString::new("Example").as_ptr(),
+    std::ptr::null_mut(),
+    0,
+    std::ptr::null_mut(),
+    0,
+) };
+if hr != 0 || handle.is_null() {
+	println!("SimConnect_Open failed");
+}
+```
+
+See `examples/sys-basic` for a working example of using the FFI bindings for SimConnect.
 
 ### Features
 

@@ -1,7 +1,9 @@
 use std::ffi::{CString, c_void};
+use std::time::Duration;
 use parking_lot::Mutex;
-use simconnect_sys::*;
 use tokio::sync::mpsc::{Sender, channel};
+
+use simconnect_sys::*;
 
 // Global channel to return data from dispatch callback
 static DISPATCH_TX: Mutex<Option<Sender<ExampleData>>> = Mutex::new(None);
@@ -118,9 +120,9 @@ async fn main() -> Result<(), &'static str> {
                 std::ptr::null_mut(),       // pContext
             ) };
             if hr != 0 {
-                println!("SimConnect_CallDispatch failed");
+                eprintln!("SimConnect_CallDispatch failed");
             }
-            std::thread::sleep(std::time::Duration::from_millis(10));
+            std::thread::sleep(Duration::from_millis(10));
         }
     });
 
@@ -177,16 +179,16 @@ unsafe extern "C" fn dispatch_proc(
         },
         SIMCONNECT_RECV_ID_EXCEPTION => {
             let e = data as *mut SIMCONNECT_RECV_EXCEPTION;
-            println!("{}", exception_str((*e).dwException));
+            eprintln!("{}", exception_str((*e).dwException));
         },
         SIMCONNECT_RECV_ID_SIMOBJECT_DATA => {
             match ExampleData::from_simobject_data(
                 data as *const SIMCONNECT_RECV_SIMOBJECT_DATA
             ) {
                 Ok(data) => if let Err(e) = tx.blocking_send(data) {
-                    println!("blocking_send: {e:?}");
+                    eprintln!("blocking_send: {e:?}");
                 },
-                Err(e) => println!("{e:?}")
+                Err(e) => eprintln!("{e:?}")
             }
         },
         SIMCONNECT_RECV_ID_EVENT => {
