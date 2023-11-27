@@ -1,0 +1,11 @@
+name: SDK Version Check
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 12 * * *'
+
+jobs: 
+  check:
+    runs-on: -latest
+    steps:
+      - run: cargo run -p sdk-version

@@ -1,12 +1,12 @@
 name: simconnect-sys
 on: 
+  workflow_dispatch:
   push:
     paths:
       - simconnect-sys
   pull_request:
     paths:
       - simconnect-sys
-  workflow_dispatch:
 
 jobs:
 
