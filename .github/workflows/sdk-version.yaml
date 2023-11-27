@@ -6,6 +6,6 @@ on:
 
 jobs: 
   check:
-    runs-on: -latest
+    runs-on: ubuntu-latest
     steps:
       - run: cargo run -p sdk-version

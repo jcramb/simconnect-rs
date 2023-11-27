@@ -17,6 +17,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: dtolnay/rust-toolchain@stable
       - run: cargo test -p simconnect-sys -F vendored
+      - run: cargo build -p sys-basic
 
   dryrun:
     name: cargo publish --dry-run

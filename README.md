@@ -40,7 +40,7 @@ if hr != 0 || handle.is_null() {
 }
 ```
 
-See ![examples/sys-basic](https://github.com/jcramb/simconnect-rs/tree/main/examples/sys-basic) for a working example of using the FFI bindings for SimConnect.
+See ![examples/sys-basic](https://github.com/jcramb/simconnect-rs/blob/main/examples/sys-basic/src/main.rs) for a working example of using the FFI bindings for SimConnect.
 
 ### Features
 
