@@ -1,0 +1,28 @@
+name: simconnect-sys
+on: 
+  push:
+    paths:
+      - simconnect-sys
+  pull_request:
+    paths:
+      - simconnect-sys
+  workflow_dispatch:
+
+jobs:
+
+  test:
+    name: cargo test
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - run: cargo test -p simconnect-sys -F vendored
+
+  dryrun:
+    name: cargo publish --dry-run
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: swatinem/rust-cache@v2
+      - run: cargo publish -p simconnect-sys --dry-run -F vendored,static

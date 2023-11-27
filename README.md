@@ -3,14 +3,11 @@
 [![license](https://img.shields.io/crates/l/simconnect-sys?style=for-the-badge)](https://crates.io/crates/simconnect-sys)
 [![version](https://img.shields.io/crates/v/simconnect-sys?style=for-the-badge)](https://crates.io/crates/simconnect-sys)
 [![downloads](https://img.shields.io/crates/d/simconnect-sys?style=for-the-badge)](https://crates.io/crates/simconnect-sys)
+<picture><img alt="maintenance" src="https://img.shields.io/maintenance/active%20development/2023?style=for-the-badge"></picture>
 
 FFI bindings for SimConnect. 
 
-## Status
-
-<picture>
-  <img alt="maintenance" src="https://img.shields.io/maintenance/active%20development/2023?style=for-the-badge">
-</picture>
+## Release Support 
 
 Currently supported version of `simconnect-sys` is using SimConnect SDK `0.22.3`.
 
@@ -43,7 +40,7 @@ if hr != 0 || handle.is_null() {
 }
 ```
 
-See `examples/sys-basic` for a working example of using the FFI bindings for SimConnect.
+See ![examples/sys-basic](https://github.com/jcramb/simconnect-rs/tree/main/examples/sys-basic) for a working example of using the FFI bindings for SimConnect.
 
 ### Features
 
