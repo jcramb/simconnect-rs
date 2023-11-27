@@ -28,7 +28,7 @@ use simconnect_sys::*;
 // open handle to SimConnect
 let mut handle = std::ptr::null_mut();
 let hr = unsafe { SimConnect_Open(
-	&mut handle,
+    &mut handle,
     CString::new("Example").as_ptr(),
     std::ptr::null_mut(),
     0,
@@ -36,7 +36,7 @@ let hr = unsafe { SimConnect_Open(
     0,
 ) };
 if hr != 0 || handle.is_null() {
-	println!("SimConnect_Open failed");
+    println!("SimConnect_Open failed");
 }
 ```
 

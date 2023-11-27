@@ -6,8 +6,8 @@ authors = [
 ]
 description = "FFI bindings for SimConnect."
 documentation = "https://docs.rs/simconnect-sys"
-homepage = "https://github.com/jcramb/simconnect-sys/"
-repository = "https://github.com/jcramb/simconnect-sys/"
+homepage = "https://github.com/jcramb/simconnect-rs/tree/main/simconnect-sys"
+repository = "https://github.com/jcramb/simconnect-rs/"
 keywords = ["simconnect", "msfs", "sdk", "rust"]
 categories = ["external-ffi-bindings"]
 license = "MIT OR Apache-2.0"
