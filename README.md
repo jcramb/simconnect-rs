@@ -15,6 +15,24 @@ SimConnect bindings for Rust.
 
 * `sdk-version` - Checks the latest SDK version, as indicated by the SimConnect release notes.
 * `sys-basic` - Example of how to use `simconnect-sys` bindings to request data from SimConnect.
+* `sample-ai-objects-and-waypoints`
+* `sample-ai-traffic`
+* `sample-facility-data-definition` (WIP)
+* `sample-facility-data-definition2` (WIP)
+* `sample-input-event`
+* `sample-joystick-input`
+* `sample-no-callback`
+* `sample-open-and-close`
+* `sample-request-data`
+* `sample-send-event-a`
+* `sample-send-event-b`
+* `sample-send-event-c`
+* `sample-set-data`
+* `sample-system-event`
+* `sample-tagged-data`
+* `sample-throttle-control`
+* `sample-tracking-errors`
+* `sample-windows-event`
 
 ## License
 

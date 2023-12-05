@@ -1,0 +1,16 @@
+[package]
+name = "sample-ai-objects-and-waypoints"
+authors = [
+    "John Cramb <john@simconnect.dev>"
+]
+description = "Adds Non ATC controlled simulation objects. Launch a flight from KSEA - Runway 34R and watch the antics. Press z to create the objects. Press x to load them with their waypoint lists. Press c to remove the generated objects."
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[features]
+static = ["simconnect-sys/static"]
+vendored = ["simconnect-sys/vendored"]
+
+[dependencies]
+simconnect-sys = { path = "../../simconnect-sys" }

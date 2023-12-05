@@ -9,7 +9,7 @@ FFI bindings for SimConnect.
 
 ## Release Support 
 
-Currently supported version of `simconnect-sys` is using SimConnect SDK `0.22.3`.
+Currently supported version of `simconnect-sys` is using SimConnect SDK `0.23.1`.
 
 Crate will be updated for each new SimConnect SDK release with the version indicating the SDK version it targets.
 
@@ -17,7 +17,7 @@ Crate will be updated for each new SimConnect SDK release with the version indic
 
 ```toml
 [dependencies]
-simconnect-sys = { version = "0.22.3", features = [ "static", "vendored" ] }
+simconnect-sys = { version = "0.23.1", features = [ "static", "vendored" ] }
 ```
 
 ### Getting Started
@@ -49,16 +49,17 @@ See ![examples/sys-basic](https://github.com/jcramb/simconnect-rs/blob/main/exam
 
 ### Environment Variables
 
-* `SIMCONNECT_DIR` (_default=_`C:\MSFS SDK\SimConnect SDK`)
+* `SIMCONNECT_DIR` (default=`C:\MSFS SDK\SimConnect SDK`)
 	* Directory containing the following files from the MSFS SimConnect SDK:
 		```
-        ├── include\
-        │   └── SimConnect.h
-        └── lib\
-            ├── SimConnect.lib
-     	    └── static\
-                └── SimConnect.lib          
-        ```
+    .
+    ├── include/
+    │   └── SimConnect.h
+    └── lib/
+        ├── SimConnect.lib
+        └── static/
+            └── SimConnect.lib          
+    ```
 * `SIMCONNECT_NO_VENDOR` 
 	* Provides an override of the `vendored` feature, ensuring vendored libs are not used. 
 

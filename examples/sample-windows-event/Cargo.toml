@@ -1,0 +1,25 @@
+[package]
+name = "sample-windows-event"
+authors = [
+    "John Cramb <john@simconnect.dev>"
+]
+description = "Requests a four second timing event, and implements a Windows Event handler to minimize processing time."
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[features]
+static = ["simconnect-sys/static"]
+vendored = ["simconnect-sys/vendored"]
+
+[dependencies]
+simconnect-sys = { path = "../../simconnect-sys" }
+
+[dependencies.windows-sys]
+version = "0.52"
+features = [
+    "Win32_Foundation",
+    "Win32_Security",
+    "Win32_System_Threading",
+    "Win32_UI_WindowsAndMessaging",
+]

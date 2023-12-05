@@ -1,2 +1,5 @@
 [build]
 target = ["x86_64-pc-windows-msvc"]
+
+[profile.x86_64-pc-windows-msvc]
+rpath = true

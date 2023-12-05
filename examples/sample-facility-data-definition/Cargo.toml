@@ -1,0 +1,16 @@
+[package]
+name = "sample-facility-data-definition"
+authors = [
+    "John Cramb <john@simconnect.dev>"
+]
+description = "WARNING: Sample is a work in progress."
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[features]
+static = ["simconnect-sys/static"]
+vendored = ["simconnect-sys/vendored"]
+
+[dependencies]
+simconnect-sys = { path = "../../simconnect-sys" }

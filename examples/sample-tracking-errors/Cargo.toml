@@ -1,0 +1,16 @@
+[package]
+name = "sample-tracking-errors"
+authors = [
+    "John Cramb <john@simconnect.dev>"
+]
+description = "Shows how to use GetLastSendID to record the ID of a request, along with an identification string, in order to match the IDs of errors returning to identify which call caused the error."
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[features]
+static = ["simconnect-sys/static"]
+vendored = ["simconnect-sys/vendored"]
+
+[dependencies]
+simconnect-sys = { path = "../../simconnect-sys" }

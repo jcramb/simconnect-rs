@@ -1,9 +1,9 @@
 [package]
-name = "sys-basic"
+name = "sample-throttle-control"
 authors = [
     "John Cramb <john@simconnect.dev>"
 ]
-description = "Basic example showing how to use the FFI bindings for SimConnect."
+description = "Press A to increase throttle by 5%. Press Z to decrease the throttle by 5%."
 version = "0.0.0"
 edition = "2021"
 publish = false
@@ -13,6 +13,4 @@ static = ["simconnect-sys/static"]
 vendored = ["simconnect-sys/vendored"]
 
 [dependencies]
-parking_lot = "0.12.1"
 simconnect-sys = { path = "../../simconnect-sys" }
-tokio = { version = "1.34.0", features = ["full"] }

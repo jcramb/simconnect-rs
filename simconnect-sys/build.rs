@@ -52,9 +52,26 @@ fn main() {
         "SimConnect"
     };
 
+    // emit linking config for simconnect dependencies
+    for lib in vec![
+        "shlwapi",
+        "user32",
+        "Ws2_32"
+    ] {
+        println!("cargo:rustc-link-lib={}", lib);
+    }
+
     // emit linking configuration
     println!("cargo:rustc-link-lib={}", simconnect_lib);
     println!("cargo:rustc-link-search={}", simconnect_lib_dir.display());
+
+    // hack to ensure DLL is copied into deps directory to make `cargo run` work
+    if !feature_static {
+        let dll = "SimConnect.dll";
+        let profile = env::var("PROFILE").unwrap();
+        let target_dir = get_cargo_target_dir().unwrap().join(profile).join("deps");
+        let _ = std::fs::copy(simconnect_lib_dir.join(dll), target_dir.join(dll));
+    }
 
     // generate bindings using bindgen and clang
     let bindings = bindgen::Builder::default()
@@ -66,7 +83,7 @@ fn main() {
         .allowlist_var("INITPOSITION_.*")
         .allowlist_item("(?i)SIMCONNECT.*")
         .parse_callbacks(Box::new(bindgen::CargoCallbacks::new()))
-        .clang_args(&["-x", "c++"])
+        .clang_args(&["-x", "c++", "-std=c++17"])
         .generate()
         .expect("Unable to generate SimConnect bindings");
 
@@ -74,4 +91,16 @@ fn main() {
     bindings
         .write_to_file(out_dir.join("bindings.rs"))
         .expect("Couldn't write SimConnect bindings!");
+        // panic!("test")
+}
+
+fn get_cargo_target_dir() -> Result<std::path::PathBuf, Box<dyn std::error::Error>> {
+    let skip_triple = std::env::var("TARGET")? == std::env::var("HOST")?;
+    let skip_parent_dirs = if skip_triple { 4 } else { 5 };
+    let out_dir = std::path::PathBuf::from(std::env::var("OUT_DIR")?);
+    let mut current = out_dir.as_path();
+    for _ in 0..skip_parent_dirs {
+        current = current.parent().ok_or("not found")?;
+    }
+    Ok(std::path::PathBuf::from(current))
 }

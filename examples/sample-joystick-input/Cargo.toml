@@ -1,0 +1,16 @@
+[package]
+name = "sample-joystick-input"
+authors = [
+    "John Cramb <john@simconnect.dev>"
+]
+description = "Use the 'z' key to step through the events sent by the Joystick including the X, Y, Z axes, Slider and Hat switch."
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[features]
+static = ["simconnect-sys/static"]
+vendored = ["simconnect-sys/vendored"]
+
+[dependencies]
+simconnect-sys = { path = "../../simconnect-sys" }

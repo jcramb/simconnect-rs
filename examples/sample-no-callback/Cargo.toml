@@ -1,0 +1,16 @@
+[package]
+name = "sample-no-callback"
+authors = [
+    "John Cramb <john@simconnect.dev>"
+]
+description = "Responds to the user aircraft brakes, without a callback function."
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[features]
+static = ["simconnect-sys/static"]
+vendored = ["simconnect-sys/vendored"]
+
+[dependencies]
+simconnect-sys = { path = "../../simconnect-sys" }

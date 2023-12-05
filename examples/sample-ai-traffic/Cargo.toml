@@ -1,0 +1,28 @@
+[package]
+name = "sample-ai-traffic"
+authors = [
+    "John Cramb <john@simconnect.dev>"
+]
+description = """
+Adds AI aircraft to make the flight from Yakima to Spokane busy. 
+First start the user aircraft at Yakima (or load the Yakima to Spokane 
+flight plan used by the AI aircraft - then drive off the runway to view 
+the goings on). 
+Press the Z key to add 3 AI aircraft. 
+Press the X key to give the parked aircraft the Yakima to Spokane flight plan. 
+Both keys can only work once. 
+The creation of the 747 should fail - as Yakima airport is not large enough 
+for this aircraft. 
+NOTE: To use relative paths (FLIGHTPATH_RELATIVE), copy 
+'IFR Yakima Air Term Mcallister to Spokane Intl.PLN' to the local AppData folder.
+"""
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[features]
+static = ["simconnect-sys/static"]
+vendored = ["simconnect-sys/vendored"]
+
+[dependencies]
+simconnect-sys = { path = "../../simconnect-sys" }

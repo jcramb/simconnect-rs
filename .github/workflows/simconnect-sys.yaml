@@ -16,8 +16,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: dtolnay/rust-toolchain@stable
-      - run: cargo test -p simconnect-sys -F vendored
-      - run: cargo build -p sys-basic
+      - run: cargo build -F vendored
+      - run: cargo test -F vendored -p simconnect-sys
 
   dryrun:
     name: cargo publish --dry-run
@@ -26,4 +26,4 @@ jobs:
       - uses: actions/checkout@v4
       - uses: dtolnay/rust-toolchain@stable
       - uses: swatinem/rust-cache@v2
-      - run: cargo publish -p simconnect-sys --dry-run -F vendored,static
+      - run: cargo publish -F vendored -p simconnect-sys --dry-run 

@@ -1,0 +1,16 @@
+[package]
+name = "sample-send-event-c"
+authors = [
+    "John Cramb <john@simconnect.dev>"
+]
+description = "Responds when custom events are sent from the Send Event A Sample."
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[features]
+static = ["simconnect-sys/static"]
+vendored = ["simconnect-sys/vendored"]
+
+[dependencies]
+simconnect-sys = { path = "../../simconnect-sys" }

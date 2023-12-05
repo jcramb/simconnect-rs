@@ -1,0 +1,16 @@
+[package]
+name = "sample-input-event"
+authors = [
+    "John Cramb <john@simconnect.dev>"
+]
+description = "The z key sets the brakes"
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[features]
+static = ["simconnect-sys/static"]
+vendored = ["simconnect-sys/vendored"]
+
+[dependencies]
+simconnect-sys = { path = "../../simconnect-sys" }

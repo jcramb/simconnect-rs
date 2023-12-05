@@ -1,0 +1,16 @@
+[package]
+name = "sample-system-event"
+authors = [
+    "John Cramb <john@simconnect.dev>"
+]
+description = "Request a FlightLoaded system event."
+version = "0.0.0"
+edition = "2021"
+publish = false
+
+[features]
+static = ["simconnect-sys/static"]
+vendored = ["simconnect-sys/vendored"]
+
+[dependencies]
+simconnect-sys = { path = "../../simconnect-sys" }

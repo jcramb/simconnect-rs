@@ -35,7 +35,7 @@ impl ExampleData {
 #[tokio::main]
 async fn main() -> Result<(), &'static str> {
 
-    // create dispatch channel
+    // Create dispatch channel
     let (tx, mut rx) = channel(128);
     *DISPATCH_TX.lock() = Some(tx);
 
@@ -62,11 +62,11 @@ async fn main() -> Result<(), &'static str> {
     let hr = unsafe { SimConnect_AddToDataDefinition(
         handle,
         define_id,                      // define_id
-        datum_name.as_ptr(),            // datum_name
-        datum_unit.as_ptr(),            // datum_unit 
-        SIMCONNECT_DATATYPE_FLOAT64,    //
+        datum_name.as_ptr(),           // datum_name
+        datum_unit.as_ptr(),           // datum_unit 
+        SIMCONNECT_DATATYPE_FLOAT64,   // data_type
         0.0,                            // f_epsilon
-        SIMCONNECT_UNUSED               // datum_id
+        SIMCONNECT_UNUSED                // datum_id
     ) };
     if hr != 0 {
         return Err("Failed to add PLANE HEADING DEGREES TRUE");
@@ -79,11 +79,11 @@ async fn main() -> Result<(), &'static str> {
     let hr = unsafe { SimConnect_AddToDataDefinition(
         handle,
         define_id,                       // define_id
-        datum_name.as_ptr(),             // datum_name
-        std::ptr::null(),                // datum_unit 
-        SIMCONNECT_DATATYPE_STRING128,   // data_type
+        datum_name.as_ptr(),            // datum_name
+        std::ptr::null(),               // datum_unit 
+        SIMCONNECT_DATATYPE_STRING128,  // data_type
         0.0,                             // f_epsilon
-        SIMCONNECT_UNUSED                // datum_id
+        SIMCONNECT_UNUSED                 // datum_id
     ) };
     if hr != 0 {
         return Err("Failed to add TITLE (aircraft name)");
@@ -99,9 +99,9 @@ async fn main() -> Result<(), &'static str> {
         SIMCONNECT_OBJECT_ID_USER,
         SIMCONNECT_PERIOD_SIM_FRAME,
         SIMCONNECT_DATA_REQUEST_FLAG_CHANGED,
-        0,  // origin
+        0,    // origin
         0,  // interval
-        0   // limit
+        0      // limit
     ) };
     if hr != 0 {
         return Err("Failed to request data");
@@ -116,7 +116,7 @@ async fn main() -> Result<(), &'static str> {
         loop {
             let hr = unsafe { SimConnect_CallDispatch(
                 handle,                     
-                Some(dispatch_proc),        // cbCallback
+                Some(dispatch_proc),    // cbCallback
                 std::ptr::null_mut(),       // pContext
             ) };
             if hr != 0 {
@@ -129,13 +129,13 @@ async fn main() -> Result<(), &'static str> {
     loop {
         tokio::select! {
 
-            // exit on Ctrl+C
+            // Exit on Ctrl+C
             _ = tokio::signal::ctrl_c() => {
                 println!("Ctrl+C");
                 break
             }
 
-            // process next ExampleData returned from callback
+            // Process next ExampleData returned from callback
             msg = rx.recv() => {
                 match msg {
                     Some(data) =>  
@@ -169,7 +169,7 @@ unsafe extern "C" fn dispatch_proc(
     match (*data).dwID as i32 {
         SIMCONNECT_RECV_ID_NULL => {
             println!("RECV_NULL"); 
-            // no messages, shouldn't happen when using CallDispatch
+            // No messages, shouldn't happen when using CallDispatch
         },
         SIMCONNECT_RECV_ID_OPEN => {
             println!("RECV_OPEN"); 
