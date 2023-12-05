@@ -1,6 +1,6 @@
 [package]
 name = "simconnect-sys"
-version = "0.23.1-latest.0"
+version = "0.23.1-latest.1"
 authors = [
     "John Cramb <john@simconnect.dev>"
 ]
@@ -26,3 +26,4 @@ anyhow = "1.0.75"
 
 [package.metadata.docs.rs]
 features = ["vendored"]
+default-target = ["x86_64-pc-windows-msvc"]

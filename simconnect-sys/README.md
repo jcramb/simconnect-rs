@@ -50,7 +50,7 @@ See [examples/sys-basic](https://github.com/jcramb/simconnect-rs/blob/main/examp
 ### Environment Variables
 
 * `SIMCONNECT_DIR` (default=`C:\MSFS SDK\SimConnect SDK`)
-	* Directory containing the following files from the MSFS SimConnect SDK:
+	* Directory containing these files from the MSFS SimConnect SDK:
   ```
   .
   ├── include/
