@@ -40,7 +40,7 @@ if hr != 0 || handle.is_null() {
 }
 ```
 
-See ![examples/sys-basic](https://github.com/jcramb/simconnect-rs/blob/main/examples/sys-basic/src/main.rs) for a working example of using the FFI bindings for SimConnect.
+See [examples/sys-basic](https://github.com/jcramb/simconnect-rs/blob/main/examples/sys-basic/src/main.rs) for a working example of using the FFI bindings for SimConnect.
 
 ### Features
 
@@ -51,15 +51,15 @@ See ![examples/sys-basic](https://github.com/jcramb/simconnect-rs/blob/main/exam
 
 * `SIMCONNECT_DIR` (default=`C:\MSFS SDK\SimConnect SDK`)
 	* Directory containing the following files from the MSFS SimConnect SDK:
-		```
-    .
-    ├── include/
-    │   └── SimConnect.h
-    └── lib/
-        ├── SimConnect.lib
-        └── static/
-            └── SimConnect.lib          
-    ```
+  ```
+  .
+  ├── include/
+  │   └── SimConnect.h
+  └── lib/
+      ├── SimConnect.lib
+      └── static/
+          └── SimConnect.lib          
+  ```
 * `SIMCONNECT_NO_VENDOR` 
 	* Provides an override of the `vendored` feature, ensuring vendored libs are not used. 
 
