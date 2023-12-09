@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+### Fixed
+* Added metadata for `docs.rs` to fix documentation builds.
+
 ## [0.23.1] - 2023-12-05
 
 ### Added

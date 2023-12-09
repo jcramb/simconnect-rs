@@ -84,6 +84,7 @@ fn main() {
         .allowlist_item("(?i)SIMCONNECT.*")
         .parse_callbacks(Box::new(bindgen::CargoCallbacks::new()))
         .clang_args(&["-x", "c++", "-std=c++17"])
+        .derive_default(true)
         .generate()
         .expect("Unable to generate SimConnect bindings");
 
