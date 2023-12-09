@@ -1,6 +1,6 @@
 [package]
 name = "simconnect-sys"
-version = "0.23.1-latest.1"
+version = "0.23.1-latest.2"
 authors = [
     "John Cramb <john@simconnect.dev>"
 ]
