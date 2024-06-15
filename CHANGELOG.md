@@ -4,8 +4,15 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
-### Fixed
-* Added metadata for `docs.rs` to fix documentation builds.
+
+## [0.24.3] - 2024-15-06
+
+### Added
+* Added `SimConnect.h` and `SimConnect.lib` for version `0.24.3`.
+
+### Changed
+* Crate now uses vendored MSFS SDK by default.
+* Removed `vendored` feature, replacing it with  `c_msfs_sdk` to opt out of vendoring.
 
 ## [0.23.1] - 2023-12-05
 
@@ -50,7 +57,8 @@ All notable changes to this project will be documented in this file.
 * Added `wrapper.h` and `build.rs` to automatically generate bindings using `bindgen`.
 * Added `SimConnect.h` and `SimConnect.lib` for version `0.22.3`.
 
-[unreleased]: https://github.com/jcramb/simconnect-rs/compare/v0.23.1...HEAD
+[unreleased]: https://github.com/jcramb/simconnect-rs/compare/v0.24.3...HEAD
+[0.24.3]: https://github.com/jcramb/simconnect-rs/compare/v0.23.1...v0.24.3
 [0.23.1]: https://github.com/jcramb/simconnect-rs/compare/v0.22.3...v0.23.1
 [0.22.3]: https://github.com/jcramb/simconnect-rs/compare/v0.1.0...v0.22.3
 [0.1.0]: https://github.com/jcramb/simconnect-rs/releases/tag/v0.1.0

@@ -22,7 +22,7 @@ publish = false
 
 [features]
 static = ["simconnect-sys/static"]
-vendored = ["simconnect-sys/vendored"]
+vendored = ["simconnect-sys/c_msfs_sdk"]
 
 [dependencies]
 simconnect-sys = { path = "../../simconnect-sys" }

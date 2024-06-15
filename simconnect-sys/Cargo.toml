@@ -1,6 +1,6 @@
 [package]
 name = "simconnect-sys"
-version = "0.23.2-pre.1"
+version = "0.24.3"
 authors = [
     "John Cramb <john@simconnect.dev>"
 ]
@@ -16,7 +16,7 @@ edition = "2021"
 
 [features]
 static = []
-vendored = []
+c_msfs_sdk = []
 
 [build-dependencies]
 bindgen = "0.69.1"
@@ -26,4 +26,3 @@ anyhow = "1.0.75"
 
 [package.metadata.docs.rs]
 default-target = ["x86_64-pc-windows-msvc"]
-features = ["vendored"]

@@ -3,13 +3,13 @@
 [![license](https://img.shields.io/crates/l/simconnect-sys?style=for-the-badge)](https://crates.io/crates/simconnect-sys)
 [![version](https://img.shields.io/crates/v/simconnect-sys?style=for-the-badge)](https://crates.io/crates/simconnect-sys)
 [![downloads](https://img.shields.io/crates/d/simconnect-sys?style=for-the-badge)](https://crates.io/crates/simconnect-sys)
-<picture><img alt="maintenance" src="https://img.shields.io/maintenance/active%20development/2023?style=for-the-badge"></picture>
+<picture><img alt="maintenance" src="https://img.shields.io/maintenance/active%20development/2024?style=for-the-badge"></picture>
 
 FFI bindings for SimConnect. 
 
 ## Release Support 
 
-Currently supported version of `simconnect-sys` is using SimConnect SDK `0.23.1`.
+Currently supported version of `simconnect-sys` is using SimConnect SDK `0.24.3`.
 
 Crate will be updated for each new SimConnect SDK release with the version indicating the SDK version it targets.
 
@@ -17,7 +17,7 @@ Crate will be updated for each new SimConnect SDK release with the version indic
 
 ```toml
 [dependencies]
-simconnect-sys = { version = "0.23.1", features = [ "static", "vendored" ] }
+simconnect-sys = { version = "0.24.3", features = [ "static" ] }
 ```
 
 ### Getting Started

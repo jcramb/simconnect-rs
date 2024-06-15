@@ -3,7 +3,7 @@
 [![license](https://img.shields.io/crates/l/simconnect-sys?style=for-the-badge)](https://crates.io/crates/simconnect-sys)
 [![version](https://img.shields.io/crates/v/simconnect-sys?style=for-the-badge)](https://crates.io/crates/simconnect-sys)
 [![downloads](https://img.shields.io/crates/d/simconnect-sys?style=for-the-badge)](https://crates.io/crates/simconnect-sys)
-<picture><img alt="maintenance" src="https://img.shields.io/maintenance/active%20development/2023?style=for-the-badge"></picture>
+<picture><img alt="maintenance" src="https://img.shields.io/maintenance/active%20development/2024?style=for-the-badge"></picture>
 
 SimConnect bindings for Rust.
 

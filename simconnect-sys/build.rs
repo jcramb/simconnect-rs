@@ -17,11 +17,11 @@ fn main() {
     // convert feature flags to booleans
     let feature_vendored;
     let feature_static;
-    #[cfg(feature = "vendored")] {
+    #[cfg(not(feature = "c_msfs_sdk"))] {
         feature_vendored = true && 
             env::var(ENV_SIMCONNECT_NO_VENDOR).map_or(true, |s| s == "0");
     }
-    #[cfg(not(feature = "vendored"))] {
+    #[cfg(feature = "c_msfs_sdk")] {
         feature_vendored = false;
     }
     #[cfg(feature = "static")] {

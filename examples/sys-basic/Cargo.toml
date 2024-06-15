@@ -10,7 +10,7 @@ publish = false
 
 [features]
 static = ["simconnect-sys/static"]
-vendored = ["simconnect-sys/vendored"]
+c_msfs_sdk = ["simconnect-sys/c_msfs_sdk"]
 
 [dependencies]
 parking_lot = "0.12.1"
